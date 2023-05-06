@@ -1,0 +1,39 @@
+--- 
+title: "Esimerkkikirja"
+author: "MathHub Tiimi"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "Minimiesimerkki bookdown-kirjasta."
+---
+
+# Asennus
+
+_Index_ on ensimmäinen sivu joka kirjasta tulee näkyviin. 
+
+Pandoc's Markdown toimii kirjassa, esimerkiksi: $a^2 + b^2 = c^2$.
+
+Jokainen .Rmd tiedosto sisältää yhden kirjan kappaleen, ja kappale muodostetaan ensimmäisen tason `#` heading-merkinnällä.
+
+1. Päästäksesi alkuun kirjan muokkaamisessa, seuraavaksi asenna **bookdown** paketti. Voit asentaa paketin RStudiossa seuraavalla komennolla:
+```{r eval=FALSE}
+install.packages("bookdown")
+```
+
+2. Jotta saat PDF, .epub ja .tex -versiot kirjasta tuotettua, asenna TinyTex ajamalla seuraava komento:
+```{r eval=FALSE}
+tinytex::install_tinytex()
+```
+
+3. Seuraavaksi asenna `xml2` ja `downlit`
+```{r eval=FALSE}
+install.packages("xml2")
+install.packages("downlit")
+```
+
+4. Voit koota kirjan painamalla RStudiossa oikealla ylhäällä `Build`-välilehdeltä "Build Book" nappia. Tämä rakentaa sekä html, PDF, epub ja tex -versiot. HTML versio kirjasta löytyy _book -kansiosta.

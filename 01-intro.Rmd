@@ -1,0 +1,21 @@
+# Alku {#alku}
+
+Kappaleet ja otsikot voi nimetä `{#label}` merkinnällä niiden jälkeen. Sen jälkeen voimme referoida kappaleeseen näin: \@ref(alku).
+
+Kaaviot ja data kuvateksteineen voidaan tehdä `figure` ja `table` komennoilla.
+
+```{r nice-fig, fig.cap='Esimerkkikaavio', out.width='80%', fig.asp=.75, fig.align='center'}
+par(mar = c(4, 4, .1, .1))
+plot(pressure, type = 'b', pch = 19)
+```
+
+Kuvaa voidaan referoida `fig:` prefixillä, esimerkiksi: \@ref(fig:nice-fig). \@ref(tab:nice-tab).
+
+```{r nice-tab, tidy=FALSE}
+knitr::kable(
+  head(iris, 20), caption = 'Tietotaulukko',
+  booktabs = TRUE
+)
+```
+
+Sitaatit toimivat näin: Esimerkiksi, käytämme **bookdown** pakettia [@R-bookdown].
