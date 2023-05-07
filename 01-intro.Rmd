@@ -1,6 +1,6 @@
 # Alku {#alku}
 
-Kappaleet ja otsikot voi nimetä `{#label}` merkinnällä niiden jälkeen. Sen jälkeen voimme referoida kappaleeseen näin: \@ref(alku).
+Ristiviittauksia varten kappaleet ja otsikot voi nimetä `{#label}` merkinnällä niiden jälkeen. Sen jälkeen voimme referoida kappaleeseen näin: \@ref(alku).
 
 Kaaviot ja data kuvateksteineen voidaan tehdä `figure` ja `table` komennoilla.
 
@@ -9,7 +9,7 @@ par(mar = c(4, 4, .1, .1))
 plot(pressure, type = 'b', pch = 19)
 ```
 
-Kuvaa voidaan referoida `fig:` prefixillä, esimerkiksi: \@ref(fig:nice-fig). \@ref(tab:nice-tab).
+Kuvaa voidaan referoida `fig:` prefixillä, kuten Kuva \@ref(fig:nice-fig) ja taulukkoon `tab:` prefixillä, kuten Taulukko \@ref(tab:nice-tab).
 
 ```{r nice-tab, tidy=FALSE}
 knitr::kable(
@@ -19,3 +19,18 @@ knitr::kable(
 ```
 
 Sitaatit toimivat näin: Esimerkiksi, käytämme **bookdown** pakettia [@R-bookdown].
+
+Matemaattisia teoreemia ja todistuksia voi kirjata ylös 
+
+```{theorem, pythagoras, name="Pythagoraan lause",echo=TRUE}
+Olkoon suorakulmaisen kolmion kateettien pituudet $a$ ja $b$ sekä hypotenuusan pituus $c$. Tällöin pätee
+\begin{equation*}
+  a^2+b^2=c^2
+\end{equation*}
+```
+```{proof}
+Todistus on triviaali.
+```
+
+ja niihin voi viitata vastaavasti `thm:`prefixillä kuten Teoreema \@ref(thm:pythagoras). (Ei kuitenkaan ole vielä selvää, kuinka teoreema-ympäristöjen sisään voisi sisällyttää esim. kuvia)
+
