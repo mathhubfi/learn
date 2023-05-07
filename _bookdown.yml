@@ -1,5 +1,29 @@
 book_filename: "bookdown-demo"
 language:
+  label:
+    fig: 'Kuva '
+    #fig: !expr function(i) paste(i, 'ábra')
+    tab: 'Taulukko '
+    eq: 'Yhtälö '
+    thm: 'Teoreema '
+    lem: 'Lemma '
+    cor: 'Korollaari '
+    prp: 'Propositio '
+    cnj: 'Konjektuuri '
+    def: 'Määritelmä '
+    exm: 'Esimerkki '
+    exr: 'Tehtävä '
+    hyp: 'Hypoteesi '
+    proof: 'Todistus. '
+    remark: 'Huomio. '
+    solution: 'Ratkaisu. '
+    refs: 'Kirjallisuutta '
+    #references: 'Kirjallisuutta '
   ui:
-    chapter_name: "Chapter "
+    edit: Edit
+    chapter_name: ''
+    appendix_name: ''
+# language:
+#   ui:
+#     chapter_name: "Chapter "
 delete_merged_file: true
