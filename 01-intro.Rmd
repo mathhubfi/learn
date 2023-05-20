@@ -48,7 +48,7 @@ cat(
 Ja myös geogebra appletteja:
 ```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
 cat(
-'<iframe width="1125" height="600" 
+'<iframe width="100%" height="450" 
   src="https://www.geogebra.org/material/iframe/id/wsuqt6hx/width/1125/height/600/border/FFFFFF/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false"
   frameborder="0" allow="accelerometer; autoplay; encrypted-media;
   gyroscope; picture-in-picture" allowfullscreen>
