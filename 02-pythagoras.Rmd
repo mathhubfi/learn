@@ -1,42 +1,71 @@
 # Pythagoraan lause
 
-Visa ja Fanny suunnitelevat ja koodaavat työkseen tietokonepelejä. He käyttävät tähän Unity-pelimoottoria. Pelimoottorissa pelimaailma esitetään rautalankamallina erilaisilla monikulmioilla, joista tärkein on kolmio: 
-
-
-```{r, echo=FALSE,out.width="100%",out.height="40%",fig.cap="Pelimaailma",fig.show='hold',fig.align='center'}
+Visa ja Fanny suunnitelevat ja koodaavat työkseen tietokonepelejä. He käyttävät tähän Unity-pelimoottoria. Pelimoottorissa pelimaailma esitetään rautalankamallina erilaisilla monikulmioilla, joista tärkein on kolmio.
+```{r, echo=FALSE,out.width="100%",out.height="40%",fig.cap="Pelimaailma rakennetaan kolmioista",fig.show='hold',fig.align='center'}
 knitr::include_graphics(c("img/renderoity.png","img/rautalanka.png"))
 ```
 
-Peleissä kolmioita käytetään myös määrittämään pelaajan etäisyys pelimaailman esineistä ja muodoista. Pelaajan ja esineiden paikka kartalla määritetään koordinaateilla. Tällöin etäisyyden määritys voidaan tehdä piirtämällä suorakulmainen kolmio, selvittämällä koordinaattien avulla kolmion kateettien pituudet ja laskemalla kolmion hypotenuusan pituus.
+Peleissä kolmioita käytetään myös määrittämään pelaajan etäisyys pelimaailman esineistä ja muodoista. Ensin pelaajan ja esineiden paikka kartalla määritetään koordinaateilla. Sitten koordinaattien avulla piirretään suorakulmainen kolmio kuvan \@ref(fig:pelaaja-esine-kolmio) mukaisesti. 
+```{r pelaaja-esine-kolmio, echo=FALSE,out.width="49%",out.height="40%",fig.cap="Pelaaja, esine ja suorakulmainen kolmio koordinaatistossa",fig.show='hold',fig.align='center'}
+knitr::include_graphics("img/pelaaja-esine.png")
+```
+Näin pelaajan ja esineen etäisyys saadaan selvittämällä suorakulmaisen kolmion hypotenuusan pituus. Mutta kuinka hypotenuusan pituus lasketaan? Tämä selviää, kun vastaat seuraaviin kysymyksiin:
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'<iframe width="100%" height="450" 
+  src="https://www.geogebra.org/material/iframe/id/ptquw8jj/width/700/height/472/border/FFFFFF/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false"
+  frameborder="0" allow="accelerometer; autoplay; encrypted-media;
+  gyroscope; picture-in-picture" allowfullscreen>
+  </iframe>'
+)
+```
+Sinisen neliön pinta-ala on siis 25. Koska $5\times 5=25$, on sinisen neliön sivun ja samalla vihreän kolmion hypotenuusan pituus 5. Huomataan, että
 
-**Tähän appletti, jolla oppilas voi laskea kolmion hypotenuusan pituuden.**
+**Suorakulmaisen kolmion kateettien neliöiden summa on hypotenuusan neliö:**
+\begin{align*}
+  3^2+4^2=5^2
+\end{align*}
+**Hypotenuusan pituus on neliöjuuri kateettien neliöiden summasta:**
+\begin{align*}
+  \sqrt{3^2+4^2}=5
+\end{align*}
 
-
-Sama tavalla voidaan toimia minkä tahansa suorakulmaisen kolmion kanssa. Piirretään tämän osoittamiseksi ensin vihreä suorakulmainen kolmio, jonka kateettien pituudet ovat $a$ ja $b$ sekä hypotenuusan pituus $c$. Piirretään sitten hypotenuusaan kiinni sininen neliö ja kopioidaan kolmiota neliön ympärille kuvan \@ref(fig:pythagoras-theorem) mukaisesti. Yhdessä neljä vihreää kolmiota ja sininen neliö muodostavat kuvan \@ref(fig:pythagoras-theorem) ison punaisen neliön, jonka sivun pituus on $a+b$, eli summa kolmion kateettien pituuksista.
+Sama tavalla voidaan toimia minkä tahansa suorakulmaisen kolmion kanssa. Piirretään tämän osoittamiseksi ensin vihreä suorakulmainen kolmio, jonka kateettien pituudet ovat $a$ ja $b$ sekä hypotenuusan pituus $c$. Kopioidaan vihreää kolmiota kuten aiemmin ja piirretään sininen neliö kolmioiden keskelle kuvan \@ref(fig:pythagoras-theorem) mukaisesti. Yhdessä neljä vihreää kolmiota ja sininen neliö muodostavat ison punaisen neliön, jonka sivun pituus on $a+b$.
 ```{r pythagoras-theorem, echo=FALSE, out.width="100%", out.height="40%", fig.cap="Pythagoraan lauseen johto", fig.show='hold', fig.align='center'}
 knitr::include_graphics("img/pythagoraan-teoreema.png")
 ```
+
+<!-- Nyt voidaan laskea -->
+
+<!-- - punaisen neliön pinta-ala: $(a+b)^2=\color{red}{a^2+2ab+b^2}$. -->
+<!-- - Neljän vihreän kolmion pinta-ala: $4\frac{ab}{2}=\color{green}{2ab}$. -->
+<!-- - sinisen neliön pinta-ala: $\color{blue}{c^2}$ -->
+
 Nyt voidaan laskea ison punaisen neliön pinta-alaksi
 \begin{equation*}
-  (a+b)^2=\color{red}{a^2+2ab+b^2}
+  (a+b)^2=\color{red}{a^2+2ab+b^2}.
 \end{equation*}
-neljän vihreän kolmion yhteenlasketuksi pinta-alaksi
+Neljän vihreän kolmion yhteenlasketuksi pinta-alaksi saadaan
 \begin{equation*}
-  4 \frac{ab}{2}=\color{green}{2ab}
+  4 \frac{ab}{2}=\color{green}{2ab}.
 \end{equation*}
-sekä pienen sinisen neliön pinta-alaksi
+Pienen sinisen neliön pinta-alaksi saadaan
 \begin{align*}
-  \color{blue}{c^2}
+  \color{blue}{c^2}.
 \end{align*}
-Pienen sinisen neliön pinta-ala on yhtäsuuri kuin ison neliön ja kolmioiden yhteenlasketun pinta-alan erotus
+Muistetaan, että pienen sinisen neliön pinta-ala saadaan vähentämällä ison punaisen neliön pinta-alasta neljän vihreän kolmion yhteenlaskettu pinta-ala
 \begin{align*}
-  \color{blue}{\text{Pieni nelio}}&=\color{red}{\text{Iso nelio}}- \color{green}{\text{neljä kolmiota}}\\
-  \color{blue}{c^2}&= \color{red}{a^2+2ab+b^2} - \color{green}{2ab}\\
-  c^2&= a^2+b^2
+  \color{blue}{\text{Pieni nelio }}&=\color{red}{\text{ iso nelio }}- \color{green}{\text{ neljä kolmiota}},\\
+  \color{blue}{c^2}&= \color{red}{a^2+2ab+b^2} - \color{green}{2ab}.
 \end{align*}
-Tämä tulos tunnetaan Pythagoraan lauseena. Kateettien neliöiden summa on hypotenuusan neliöiden summa. Pythagoraan lauseen avulla hypotenuusan pituus voidaan laskea kateettien pituuksista yhtälöllä
+Koska yhtälössä $\color{red}{2ab} - \color{green}{2ab}=0$, saadaan lopulta Pythagoraan lause
+\begin{equation*}
+  a^2+b^2=c^2.
+\end{equation*}
+
+Aivan kuten aiemmin jo havaitsit, kateettien neliöiden summa on hypotenuusan neliöiden summa. Tämä pätee mille tahansa suorakulmaiselle kolmiolle. Pythagoraan lauseen avulla hypotenuusan pituus voidaan laskea kateettien pituuksista yhtälöllä
 \begin{align*}
-  c=\sqrt{a^2+b^2}
+  c=\sqrt{a^2+b^2}.
 \end{align*}
-ja tätä yhtälöä käyttäen peleissä selvittää pelaajan etäisyys pelimaailman esineistä ja muodoista.
+Näin pelaajan etäisyys pelimaailman esineistä saadaan laskettua, oli pelaaja kartalla missä tahansa.
 

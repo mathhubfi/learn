@@ -22,17 +22,17 @@ Sitaatit toimivat näin: Esimerkiksi, käytämme **bookdown** pakettia [@R-bookd
 
 Matemaattisia teoreemia ja todistuksia voi kirjata ylös 
 
-```{theorem, pythagoras, name="Pythagoraan lause",echo=TRUE}
-Olkoon suorakulmaisen kolmion kateettien pituudet $a$ ja $b$ sekä hypotenuusan pituus $c$. Tällöin pätee
+```{theorem, my-theorem, name="Minun Teoreema",echo=TRUE}
+Olkoon $a$ ja $b$ sekä $c$. Tällöin pätee
 \begin{equation*}
-  a^2+b^2=c^2
+  a-b=c
 \end{equation*}
 ```
 ```{proof}
 Todistus on triviaali.
 ```
 
-ja niihin voi viitata vastaavasti `thm:`prefixillä kuten Teoreema \@ref(thm:pythagoras). (Ei kuitenkaan ole vielä selvää, kuinka teoreema-ympäristöjen sisään voisi sisällyttää esim. kuvia)
+ja niihin voi viitata vastaavasti `thm:`prefixillä kuten Teoreema \@ref(thm:my-theorem). (Ei kuitenkaan ole vielä selvää, kuinka teoreema-ympäristöjen sisään voisi sisällyttää esim. kuvia)
 
 Myös youtube upotuksia voi tehdä:
 ```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
