@@ -6,7 +6,7 @@ knitr::include_graphics(c("img/renderoity.png","img/rautalanka.png"))
 ```
 
 Peleissä kolmioita käytetään myös määrittämään pelaajan etäisyys pelimaailman esineistä ja muodoista. Ensin pelaajan ja esineiden paikka kartalla määritetään koordinaateilla. Sitten koordinaattien avulla piirretään suorakulmainen kolmio kuvan \@ref(fig:pelaaja-esine-kolmio) mukaisesti. 
-```{r pelaaja-esine-kolmio, echo=FALSE,out.width="49%",out.height="40%",fig.cap="Pelaaja, esine ja suorakulmainen kolmio koordinaatistossa",fig.show='hold',fig.align='center'}
+```{r pelaaja-esine-kolmio, echo=FALSE,out.width="30%",out.height="30%",fig.cap="Pelaaja, esine ja suorakulmainen kolmio koordinaatistossa",fig.show='hold',fig.align='center'}
 knitr::include_graphics("img/pelaaja-esine.png")
 ```
 Näin pelaajan ja esineen etäisyys saadaan selvittämällä suorakulmaisen kolmion hypotenuusan pituus. Mutta kuinka hypotenuusan pituus lasketaan? Tämä selviää, kun vastaat seuraaviin kysymyksiin:
@@ -34,29 +34,14 @@ Sama tavalla voidaan toimia minkä tahansa suorakulmaisen kolmion kanssa. Piirre
 ```{r pythagoras-theorem, echo=FALSE, out.width="100%", out.height="40%", fig.cap="Pythagoraan lauseen johto", fig.show='hold', fig.align='center'}
 knitr::include_graphics("img/pythagoraan-teoreema.png")
 ```
-
-<!-- Nyt voidaan laskea -->
-
-<!-- - punaisen neliön pinta-ala: $(a+b)^2=\color{red}{a^2+2ab+b^2}$. -->
-<!-- - Neljän vihreän kolmion pinta-ala: $4\frac{ab}{2}=\color{green}{2ab}$. -->
-<!-- - sinisen neliön pinta-ala: $\color{blue}{c^2}$ -->
-
-Nyt voidaan laskea ison punaisen neliön pinta-alaksi
-\begin{equation*}
-  (a+b)^2=\color{red}{a^2+2ab+b^2}.
-\end{equation*}
-Neljän vihreän kolmion yhteenlasketuksi pinta-alaksi saadaan
-\begin{equation*}
-  4 \frac{ab}{2}=\color{green}{2ab}.
-\end{equation*}
-Pienen sinisen neliön pinta-alaksi saadaan
-\begin{align*}
-  \color{blue}{c^2}.
-\end{align*}
+Nyt voidaan laskea punaisen, vihreän ja sinisen alueen pinta-aloiksi:
+```{r pythagoras-theorem-alat, echo=FALSE, out.width="100%", out.height="40%", fig.cap="Pinta-alojen laskeminen", fig.show='hold', fig.align='center'}
+knitr::include_graphics("img/pythagoraan-teoreema-todistus.png")
+```
 Muistetaan, että pienen sinisen neliön pinta-ala saadaan vähentämällä ison punaisen neliön pinta-alasta neljän vihreän kolmion yhteenlaskettu pinta-ala
 \begin{align*}
-  \color{blue}{\text{Pieni nelio }}&=\color{red}{\text{ iso nelio }}- \color{green}{\text{ neljä kolmiota}},\\
-  \color{blue}{c^2}&= \color{red}{a^2+2ab+b^2} - \color{green}{2ab}.
+ \color{red}{\text{Punainen neliö }}- \color{green}{\text{ vihreät kolmiot }}&=\color{blue}{\text{ sininen neliö}},\\
+  \color{red}{a^2+2ab+b^2} - \color{green}{2ab}&=\color{blue}{c^2}.
 \end{align*}
 Koska yhtälössä $\color{red}{2ab} - \color{green}{2ab}=0$, saadaan lopulta Pythagoraan lause
 \begin{equation*}
