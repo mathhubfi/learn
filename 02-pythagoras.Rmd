@@ -1,15 +1,15 @@
 # Pythagoraan lause
 
 Visa ja Fanny suunnitelevat ja koodaavat työkseen tietokonepelejä. He käyttävät tähän Unity-pelimoottoria. Pelimoottorissa pelimaailma esitetään rautalankamallina erilaisilla monikulmioilla, joista tärkein on kolmio.
-```{r, echo=FALSE,out.width="100%",out.height="40%",fig.cap="Pelimaailma rakennetaan kolmioista",fig.show='hold',fig.align='center'}
+```{r, echo=FALSE,out.width="80%",out.height="40%",fig.cap="Pelimaailma rakennetaan kolmioista",fig.show='hold',fig.align='center'}
 knitr::include_graphics(c("img/renderoity.png","img/rautalanka.png"))
 ```
 
-Peleissä kolmioita käytetään myös määrittämään pelaajan etäisyys pelimaailman esineistä ja muodoista. Ensin pelaajan ja esineiden paikka kartalla määritetään koordinaateilla. Sitten koordinaattien avulla piirretään suorakulmainen kolmio kuvan \@ref(fig:pelaaja-esine-kolmio) mukaisesti. 
-```{r pelaaja-esine-kolmio, echo=FALSE,out.width="30%",out.height="30%",fig.cap="Pelaaja, esine ja suorakulmainen kolmio koordinaatistossa",fig.show='hold',fig.align='center'}
+Peleissä kolmioita käytetään määrittämään myös pelaajan etäisyys pelimaailman esineistä ja muodoista. Ensin pelaajan ja esineiden paikka kartalla määritetään koordinaateilla. Sitten koordinaattien avulla piirretään suorakulmainen kolmio kuvan \@ref(fig:pelaaja-esine-kolmio) mukaisesti. 
+```{r pelaaja-esine-kolmio, echo=FALSE,out.width="40%",out.height="40%",fig.cap="Pelaaja, esine ja suorakulmainen kolmio koordinaatistossa",fig.show='hold',fig.align='center'}
 knitr::include_graphics("img/pelaaja-esine.png")
 ```
-Näin pelaajan ja esineen etäisyys saadaan selvittämällä suorakulmaisen kolmion hypotenuusan pituus. Mutta kuinka hypotenuusan pituus lasketaan? Tämä selviää, kun vastaat seuraaviin kysymyksiin:
+Näin pelaajan ja esineen etäisyys saadaan selville laskemalla suorakulmaisen kolmion hypotenuusan pituus. Mutta kuinka hypotenuusan pituus lasketaan? Selvitetäänpä tämä mysteeri pohtimalla seuraavia kysymyksiä:
 ```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
 cat(
 '<iframe width="100%" height="450" 
@@ -19,38 +19,61 @@ cat(
   </iframe>'
 )
 ```
-Sinisen neliön pinta-ala on siis 25. Koska $5\times 5=25$, on sinisen neliön sivun ja samalla vihreän kolmion hypotenuusan pituus 5. Huomataan, että
+Huomataan, että sinisen neliön pinta-ala on yhtä suuri kuin vihreän kolmion kateettien neliöiden summa. Koska vihreän kolmion hypotenuusa on myös sinisen neliön sivu, voidaan todeta:
 
 **Suorakulmaisen kolmion kateettien neliöiden summa on hypotenuusan neliö:**
 \begin{align*}
   3^2+4^2=5^2
 \end{align*}
-**Hypotenuusan pituus on neliöjuuri kateettien neliöiden summasta:**
+
+**Suorakulmaisen kolmion hypotenuusan pituus on neliöjuuri kateettien neliöiden summasta:**
 \begin{align*}
-  \sqrt{3^2+4^2}=5
+  5=\sqrt{3^2+4^2}
 \end{align*}
 
-Sama tavalla voidaan toimia minkä tahansa suorakulmaisen kolmion kanssa. Piirretään tämän osoittamiseksi ensin vihreä suorakulmainen kolmio, jonka kateettien pituudet ovat $a$ ja $b$ sekä hypotenuusan pituus $c$. Kopioidaan vihreää kolmiota kuten aiemmin ja piirretään sininen neliö kolmioiden keskelle kuvan \@ref(fig:pythagoras-theorem) mukaisesti. Yhdessä neljä vihreää kolmiota ja sininen neliö muodostavat ison punaisen neliön, jonka sivun pituus on $a+b$.
-```{r pythagoras-theorem, echo=FALSE, out.width="100%", out.height="40%", fig.cap="Pythagoraan lauseen johto", fig.show='hold', fig.align='center'}
-knitr::include_graphics("img/pythagoraan-teoreema.png")
-```
-Nyt voidaan laskea punaisen, vihreän ja sinisen alueen pinta-aloiksi:
-```{r pythagoras-theorem-alat, echo=FALSE, out.width="100%", out.height="40%", fig.cap="Pinta-alojen laskeminen", fig.show='hold', fig.align='center'}
+Hieno havainto! Mutta päteekö tämä tulos kaikille suorakulmaisille kolmioille? Mitä tapahtuu, jos kateettien pituudet eivät olekaan 3 ja 4? Tutkitaan asiaa piirtämällä kuvaan \@ref(fig:pythagoras-theorem) punainen nelio, neljä vihreää kolmiota ja sininen neliö uudestaan, mutta oletetaan kolmion kateettien pituuksiksi nyt $a$ ja $b$ sekä hypotenuusan pituudeksi $c$. Lasketaan näillä tiedoilla myös eri väristen alueiden pinta-alat:
+```{r pythagoras-theorem, echo=FALSE, out.width="100%", out.height="40%", fig.cap="Pinta-alojen laskeminen", fig.show='hold', fig.align='center'}
 knitr::include_graphics("img/pythagoraan-teoreema-todistus.png")
 ```
-Muistetaan, että pienen sinisen neliön pinta-ala saadaan vähentämällä ison punaisen neliön pinta-alasta neljän vihreän kolmion yhteenlaskettu pinta-ala
+Muistetaan, että sinisen neliön pinta-ala saadaan vähentämällä punaisen neliön pinta-alasta neljän vihreän kolmion yhteenlaskettu pinta-ala:
 \begin{align*}
  \color{red}{\text{Punainen neliö }}- \color{green}{\text{ vihreät kolmiot }}&=\color{blue}{\text{ sininen neliö}},\\
+  \color{red}{(a+b)^2} - \color{green}{4\frac{ab}{2}}&=\color{blue}{c^2},\\
   \color{red}{a^2+2ab+b^2} - \color{green}{2ab}&=\color{blue}{c^2}.
 \end{align*}
-Koska yhtälössä $\color{red}{2ab} - \color{green}{2ab}=0$, saadaan lopulta Pythagoraan lause
+Koska $\color{red}{2ab} - \color{green}{2ab}=0$, saadaan lopulta tärkeä tulos:
+
+**Pythagoraan lause:**
+
+Olkoon suorakulmaisen kolmion kateettien pituudet $a$ ja $b$ sekä hypotenuusan pituus $c$. Tällöin 
 \begin{equation*}
   a^2+b^2=c^2.
 \end{equation*}
-
-Aivan kuten aiemmin jo havaitsit, kateettien neliöiden summa on hypotenuusan neliöiden summa. Tämä pätee mille tahansa suorakulmaiselle kolmiolle. Pythagoraan lauseen avulla hypotenuusan pituus voidaan laskea kateettien pituuksista yhtälöllä
+Aivan kuten aiemmin jo havaitsit, kateettien neliöiden summa on hypotenuusan neliö. Ja nyt tiedämme tuloksen pätevän kaikille suorakulmaisille kolmioille! Pythagoraan lauseen avulla hypotenuusan pituus voidaan laskea kateettien pituuksista yhtälöllä
 \begin{align*}
   c=\sqrt{a^2+b^2}.
 \end{align*}
-Näin pelaajan etäisyys pelimaailman esineistä saadaan laskettua, oli pelaaja kartalla missä tahansa.
+Näin pelaajan etäisyys pelimaailman esineistä saadaan laskettua, oli pelaaja kartalla missä tahansa. Harjoitellaan seuraavaksi Pythagoraan lauseen käyttöä tehtävillä.
+
+```{exercise ,echo=TRUE}
+Tähän kirjataan tehtävä: Olkoon $a$ ja $b$ sekä $c$. Tällöin 
+\begin{equation*}
+  a-b=c
+\end{equation*}
+Laske $c-b$.
+```
+```{exercise ,echo=TRUE}
+Tähän kirjataan toinen tehtävä: laske
+\begin{equation*}
+  a-b=c
+\end{equation*}
+```
+```{exercise ,echo=TRUE}
+Tähän kirjataan kolmas tehtävä: Olkoon $a$ ja $b$ sekä $c$. Tällöin 
+\begin{equation*}
+  a-b=c
+\end{equation*}
+Laske $c-b$.
+```
+
 
