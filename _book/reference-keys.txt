@@ -1,0 +1,12 @@
+fig:nice-fig
+tab:nice-tab
+thm:my-theorem
+fig:unnamed-chunk-7
+fig:pelaaja-esine-kolmio
+fig:pythagoras-theorem
+exr:unnamed-chunk-9
+exr:unnamed-chunk-10
+exr:unnamed-chunk-11
+asennus
+alku
+pythagoraan-lause
